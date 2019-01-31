@@ -1,0 +1,44 @@
+{
+  "name": "log-wrapper",
+  "version": "1.0.0",
+  "description": "simple wrapper for Winston",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "npm run clean && npm run build-ts && npm run tslint",
+    "clean": "./node_modules/.bin/rimraf .nyc_output gen dist",
+    "build-ts": "tsc",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "test": "jest --detectOpenHandles --coverage --verbose",
+    "release": "standard-version",
+    "release:alpha": "npm run release -- --prerelease alpha",
+    "release:beta": "npm run release -- --prerelease beta",
+    "git-publish": "git push --follow-tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ekarpovs/log-wrapper.git"
+  },
+  "keywords": [
+    "log",
+    "winston",
+    "wrapper",
+    "typescript"
+  ],
+  "author": "ekarpovs",
+  "license": "ISC",
+  "dependencies": {
+    "winston": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.13",
+    "@types/supertest": "^2.0.7",
+    "jest": "^23.6.0",
+    "rimraf": "^2.6.3",
+    "supertest": "^3.4.2",
+    "ts-jest": "^23.10.5",
+    "ts-node": "^8.0.2",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.4"
+  }
+}
