@@ -8,7 +8,7 @@
     "build": "npm run clean && npm run build-ts && npm run tslint",
     "clean": "./node_modules/.bin/rimraf .nyc_output gen dist",
     "build-ts": "tsc",
-    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "tslint": "tslint -c tslint.json -p tsconfig.lib.json",
     "test": "jest --detectOpenHandles --coverage --verbose",
     "release": "standard-version",
     "release:alpha": "npm run release -- --prerelease alpha",

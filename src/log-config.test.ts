@@ -7,14 +7,14 @@ describe('Create LogConfig', () => {
   });
 });
 
-describe('Level default value', () => {
+describe('Assign \'level\' default value', () => {
   it('should be equal to \'debug\'', () => {
     const config = new LogConfig();
     expect(config.level).toEqual('debug');
   });
 });
 
-describe('FileName default value', () => {
+describe('Assign \'fileName\' default value', () => {
   it('should be equal to \'debug.log\'', () => {
     const config = new LogConfig();
     expect(config.fileName).toEqual('debug.log');
