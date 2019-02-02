@@ -8,13 +8,9 @@
     "prepare": "npm run build",
     "build": "npm run clean && npm run build-ts && npm run tslint",
     "clean": "./node_modules/.bin/rimraf .nyc_output gen lib",
-    "build-ts": "tsc",
-    "tslint": "tslint -c tslint.json -p tsconfig.lib.json",
-    "test": "jest --detectOpenHandles --coverage --verbose",
-    "release": "standard-version",
-    "release:alpha": "npm run release -- --prerelease alpha",
-    "release:beta": "npm run release -- --prerelease beta",
-    "git-publish": "git push --follow-tags"
+    "build-ts": "tsc -p ./tsconfig.lib.json",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "test": "jest --detectOpenHandles --coverage --verbose"
   },
   "repository": {
     "type": "git",
