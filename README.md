@@ -20,10 +20,15 @@ npm run build
 npm run test
 npm run start
 ```
-=======
+
 ## Running the app locally
 
 ## Docker
+
+```bash
+docker build -t wep-app-api-gtw .
+docker run -p 3000:3000 wep-app-api-gtw
+```
 
 ## Docker compose
 

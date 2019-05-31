@@ -27,6 +27,13 @@ RUN npm install -g nodemon
 COPY package.json .
 RUN npm config set registry http://registry.npmjs.org
 
+# Env Vars
+ARG TOKEN
+ENV GITHUB_API_TOKEN ${TOKEN}
+# RUN git clone https://x-access-token:${GITHUB_API_TOKEN}@github.com/ekarpovs/log-wrapper.git
+# RUN git config --global url."https://github.com".insteadOf git://github.com
+# RUN git config remote.origin.url https://x-access-token:${GITHUB_API_TOKEN}@github.com/ekarpovs/log-wrapper.git
+RUN git config remote.origin.url https://${GITHUB_API_TOKEN}@github.com/ekarpovs/log-wrapper.git
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
